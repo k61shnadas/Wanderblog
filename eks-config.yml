@@ -17,9 +17,9 @@ vpc:
   id: vpc-008b5b5588c75990c   # your existing VPC ID
   subnets:
     private:
-      ap-south-1a-private:
+      eu-west-1a-private:
         id: subnet-0b7560fdc76403b47   # your private subnet in ap-south-1a
-      ap-south-1b-private:
+      eu-west-1b-private:
         id: subnet-0b6225fa3354175dd   # your private subnet in ap-south-1b
 
 managedNodeGroups:
@@ -30,10 +30,6 @@ managedNodeGroups:
     maxSize: 4
     volumeSize: 20
     privateNetworking: true
-
-    subnets:
-      - eu-west-1a-private
-      - eu-west-1b-private
 
     iam:
       withAddonPolicies:
