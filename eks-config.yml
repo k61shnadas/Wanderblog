@@ -6,7 +6,7 @@ metadata:
   region: ap-south-1
   version: "1.35"
   tags:
-    owner: gauri-shirkande
+    owner: krishnadas
     bu: cwg
     project: wanderblog
 
