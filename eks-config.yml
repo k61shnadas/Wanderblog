@@ -4,36 +4,43 @@ kind: ClusterConfig
 metadata:
   name: wanderblog-eks-cluster
   region: ap-south-1
-  version: "1.35" 
+  version: "1.35"
   tags:
     owner: gauri-shirkande
     bu: cwg
     project: wanderblog
 
-availabilityZones:
-  - ap-south-1a
-  - ap-south-1b
-
 iam:
   withOIDC: true
 
+vpc:
+  id: vpc-xxxxxxxxxxxxxxxxx   # your existing VPC ID
+  subnets:
+    private:
+      ap-south-1a-private:
+        id: subnet-xxxxxxxxxxxxxxxxx   # your private subnet in ap-south-1a
+      ap-south-1b-private:
+        id: subnet-yyyyyyyyyyyyyyyyy   # your private subnet in ap-south-1b
+
 managedNodeGroups:
   - name: wanderblog-node-group
-    instanceType: t2.medium
+    instanceType: t3.medium
     minSize: 2
-    maxSize: 2
-    privateNetworking: true
+    desiredCapacity: 2
+    maxSize: 4
     volumeSize: 20
+    privateNetworking: true
+
+    subnets:
+      - ap-south-1a-private
+      - ap-south-1b-private
+
     iam:
       withAddonPolicies:
         autoScaler: true
-        externalDNS: false
-        certManager: yes
+        certManager: true
         ebs: true
-        fsx: false
-        efs: false
         albIngress: true
-        xRay: false
-        cloudWatch: false
+
     labels:
       lifecycle: ec2-autoscaler
