@@ -3,7 +3,7 @@ kind: ClusterConfig
 
 metadata:
   name: wanderblog-eks-cluster
-  region: ap-south-1
+  region: eu-west-1
   version: "1.35"
   tags:
     owner: krishnadas
