@@ -21,7 +21,7 @@ metadata:
       alb.ingress.kubernetes.io/success-codes: '200'
 
       alb.ingress.kubernetes.io/ssl-redirect: '443'
-      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:829058667760:certificate/2485e657-62e8-4a3d-bdb7-d544e9c75ab9
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:452295101062:certificate/aeba7121-d556-4199-a99a-d2891f741a45
 spec:
   ingressClassName: alb
   rules:
