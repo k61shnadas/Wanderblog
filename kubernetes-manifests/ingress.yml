@@ -25,7 +25,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: wanderblog.online
+    - host: blog1.hilal-aws.com
       http:
         paths:
           - path: /
